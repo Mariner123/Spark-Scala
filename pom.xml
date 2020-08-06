@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.arnab</groupId>
+  <artifactId>Sparktry</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Sparktry</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+<build>
+  <plugins>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <version>3.5</version>
+		    <configuration>
+		        <source>1.8</source>
+		        <target>1.8</target>
+		    </configuration>
+		    <executions>
+		        <execution>
+		            <id>default-compile</id>
+		            <phase>none</phase>
+		        </execution>
+		    </executions>
+		</plugin>
+		<plugin>
+		    <groupId>net.alchim31.maven</groupId>
+		    <artifactId>scala-maven-plugin</artifactId>
+		    <version>3.2.2</version>
+		    <configuration>
+		        <recompileMode>incremental</recompileMode>
+		        <checkMultipleScalaVersions>false</checkMultipleScalaVersions>
+		    </configuration>
+		    <executions>
+		        <execution>
+		            <goals>
+		                <goal>compile</goal>
+		                <goal>testCompile</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+		</plugin>
+		<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-eclipse-plugin</artifactId>
+<version>2.9</version>
+</plugin>
+	</plugins>
+  </build>
+  <dependencies>
+  <dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-core_2.11</artifactId>
+		    <version>2.2.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-sql_2.11</artifactId>
+		    <version>2.2.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-hive_2.11</artifactId>
+		    <version>2.2.3</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-yarn_2.11</artifactId>
+		    <version>2.2.3</version>
+		</dependency>
+		</dependencies>	
+</project>
